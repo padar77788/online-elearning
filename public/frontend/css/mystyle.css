@@ -1,0 +1,111 @@
+/*
+ login form
+*/
+  .form-control-user{
+
+   padding: 15px;
+
+   border-radius: 18px;
+
+   border: 1px solid blue;
+
+ }
+  .p-border{
+      background-color: blue;
+      border: 2px solid blue;
+  }
+
+  /*
+  user   profile
+  */
+  .profile-img{
+            height: 150px;
+            width: 150;
+
+            border-radius:50%;
+            border:1px solid navy;
+            margin-left: 200px;
+            margin-bottom: 20px;
+
+  }
+  .imagebtn{
+            margin-left: 220px;
+            margin-bottom: 20px;
+            background-color: black;
+            width:95px;
+  }
+
+  /*
+   lession course section
+  */
+  .lession-list li:hover{
+            background-color:#D7EBE9;
+  }
+
+  .page-border{
+          border:1px solid navy;
+          margin-bottom: 5px;
+  }
+
+
+
+   /*
+   course-start-button
+   */
+.cousre-div:hover{
+       opacity: 0.8;
+       border: 1px solid #2C3E50;
+}
+   .course-start-button a{
+           color:pink;
+          margin-left: 100px;
+
+
+   }
+
+   .active-lesson {
+       color: #167b72 !important;
+       background: #d7ebe9;
+   }
+
+/*
+lession like dislke,view
+*/
+
+
+.lession-like-dilike-view ul li{
+   margin-top: 10px;
+   display: inline;
+   padding: 40px;
+}
+.lession-like-dilike-view a{
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  footer
+*/
+.datempete-footer{
+    margin-top: 15px;
+    background-color: #0D1B42 !important;
+    margin-bottom:0;
+}
+.datempete-footer h4 {
+    color: white;
+}
+
+.datempete-footer  p{
