@@ -18,7 +18,7 @@
             @endif
 
             <div class="card-body">
-              <form class="" action="{{ route('store-lession')}}" method="post" >
+              <form class="" action="{{ route('instructor-store-lession')}}" method="post" >
                 @csrf
                 <div class="form-group">
                   <label for="">Title</label>

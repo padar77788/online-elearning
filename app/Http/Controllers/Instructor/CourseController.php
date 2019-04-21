@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CourseRequest;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NewCourseNotification;
 use App\Model\Catagory;
 use App\Model\User;
 use App\Model\Course;
+use App\Model\Subscriber;
 use Image;
 use File;
 
@@ -37,7 +40,7 @@ class CourseController extends Controller
 
     public function store(CourseRequest $request)
     {
-
+                 $subscribe=User::all();
                  $url=$this->uploadimage($request);
                  $course=new Course();
                  $course->title=$request->title;
@@ -46,7 +49,6 @@ class CourseController extends Controller
                  $course->user_id=Auth::id();
                  $course->image=$url;
                  $course->save();
-
                  return redirect()->back()->with('message','Course Added Successfully ');
 
 

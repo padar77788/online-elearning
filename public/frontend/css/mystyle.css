@@ -74,9 +74,8 @@ lession like dislke,view
 
 
 .lession-like-dilike-view ul li{
-   margin-top: 10px;
    display: inline;
-   padding: 40px;
+   padding: 12px;
 }
 .lession-like-dilike-view a{
   color: black;

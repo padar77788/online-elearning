@@ -13,21 +13,13 @@ class ContactController extends Controller
         }
 
 
-        public function store(Request $request ){
-          $request->validate([
-            'name'=>'required|min:3',
-            'phone'=>'required|min:11',
-            'email'=>'requried|email',
-            'subject'=>'required',
-          ]);
+        public function store(ContactRequest $request ){
+
                    $contact=new Contact();
                    $contact->create($request->all());
-                   session()->flash('message','Your Message Sent Successfully');
+                   toastr()->success('Your message sent successfully');
                    return redirect()->back();
         }
 
 
-        public function validationrule($request){
-
-        }
 }

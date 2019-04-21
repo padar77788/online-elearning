@@ -19,6 +19,8 @@
 <!-- Custom fonts for this template-->
   <!-- Custom styles for this template-->
   <link href="{{ asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
   @yield('css')
 </head>
 
@@ -56,19 +58,7 @@
         Interface
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Catagory</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('create-catagory')}}">Add Catagory</a>
-            <a class="collapse-item" href="{{ route('manage-catagory')}}">Manage Catagory</a>
-          </div>
-        </div>
-      </li>
+
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
@@ -78,8 +68,8 @@
         </a>
         <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('create-course')}}">Add Course</a>
-            <a class="collapse-item" href="{{ route('manage-course')}}">Manage Course</a>
+            <a class="collapse-item" href="{{ route('instructor-create-course')}}">Add Course</a>
+            <a class="collapse-item" href="{{ route('instructor-manage-course')}}">Manage Course</a>
           </div>
         </div>
       </li>
@@ -91,8 +81,8 @@
         </a>
         <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('create-section')}}">Add Section</a>
-            <a class="collapse-item" href="{{ route('manage-section')}}">Manage Section</a>
+            <a class="collapse-item" href="{{ route('instructor-create-section')}}">Add Section</a>
+            <a class="collapse-item" href="{{ route('instructor-manage-section')}}">Manage Section</a>
           </div>
         </div>
       </li>
@@ -105,18 +95,10 @@
         </a>
         <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('create-lession')}}">Add Lession</a>
-            <a class="collapse-item" href="{{ route('manage-lession')}}">Manage Lession</a>
+            <a class="collapse-item" href="{{ route('instructor-create-lession')}}">Add Lession</a>
+            <a class="collapse-item" href="{{ route('instructor-manage-lession')}}">Manage Lession</a>
           </div>
         </div>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('manage-users')}}" >
-          <i class="fa fa-user"></i>
-          <span>Users</span>
-        </a>
-
       </li>
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -387,12 +369,23 @@
         });
     </script>
     <script>
-          CKEDITOR.replace( 'discription' );
-      </script>
+
+        var url='{{ url('') }}';
+        var options = {
+          filebrowserImageBrowseUrl: url+'/laravel-filemanager?type=Images',
+          filebrowserImageUploadUrl: url+'/laravel-filemanager/upload?type=Images&_token=',
+          filebrowserBrowseUrl: url+'/laravel-filemanager?type=Files',
+          filebrowserUploadUrl: url+'/laravel-filemanager/upload?type=Files&_token='
+        };
+
+        CKEDITOR.replace( 'discription',options );
+
+    </script>
 
 
 <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+       {!! Toastr::message() !!}
 </body>
 
 </html>

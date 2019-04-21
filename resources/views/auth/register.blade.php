@@ -73,8 +73,8 @@
 
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"  name="confirm_password" placeholder="Repeat Password">
-                    <span class="text-danger mt-3">{{ $errors->first('confirm_password')}}</span>
+                    <input type="password" class="form-control form-control-user"  name="password_confirmation" placeholder="Repeat Password">
+                    <span class="text-danger mt-3">{{ $errors->first('password_confirmation')}}</span>
 
                   </div>
                 </div>

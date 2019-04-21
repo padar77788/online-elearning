@@ -26,7 +26,6 @@
                     <th>Title</th>
                     <th>Course</th>
                     <th>Section</th>
-                    <th>Instructor</th>
                     <th>Discription</th>
                     <th>Video Url</th>
                     <th>Sourcecode Url</th>
@@ -41,14 +40,13 @@
                     <td>{{ $lession->title }}</td>
                     <td>{{ $lession->course->title}}</td>
                     <td>{{ $lession->section->title }}</td>
-                    <td>{{ $lession->user->name }}</td>
                     <td>{{ $lession->discription }}</td>
                     <td>{{ $lession->video_url }}</td>
                     <td>{{ $lession->sourcecode_url}}</td>
 
                     <td>
-                        <a class="fa fa-edit "   href="{{ route('edit-lession',$lession->id)}}"></a>
-                        <a  class="fa fa-trash"  href="{{ route('destroy-lession',$lession->id)}}"
+                        <a class="fa fa-edit "   href="{{ route('instructor-edit-lession',$lession->id)}}"></a>
+                        <a  class="fa fa-trash"  href="{{ route('instructor-destroy-lession',$lession->id)}}"
                           onclick="return confirm('Are you sure want to delete this lession !!!')"
                         ></a>
 

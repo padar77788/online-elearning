@@ -4,21 +4,7 @@
 @section('title','Course')
 
 @section('content')
-      <div class="container">
-        <div class="row align-items-center site-hero-inner justify-content-center">
-          <div class="col-md-8 text-center">
-            <div class="mb-5 element-animate">
-              <h1>Level Up Your Skills</h1>
-              <!-- <p class="lead">See our courses Below. Learn something new every day with skwela lorem ipsum dolor sit amet.</p>
-              <p><a href="#" class="btn btn-primary">Sign up and get a 7-day free trial</a></p> -->
-            </div>
 
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
 
   <div class="comtainer">
     <div class="row mt-5">

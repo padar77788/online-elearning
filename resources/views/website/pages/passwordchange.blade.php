@@ -35,54 +35,58 @@
           <div class="container mt-5 mb-5">
 
                <div class="row">
-                    <div class="col-md-8 offset-2 ">
-                      <h3 class="border p-2 mb-5 text-center rounded bg-light">Change password</h3>
-                      <div class="card p-5">
-                        @if (Session::get('message')==true)
-                        <h3 class="alert alert-success text-danger">{{ Session::get('message')}}</h3>
-                        @endif
+                          <div class="col-md-8 offset-2 ">
+                            <h3 class="border p-2 mb-5 text-center rounded bg-light">Change password</h3>
+                            <div class="card p-5">
+                              @if (Session::get('message')==true)
+                              <h3 class="alert alert-success text-danger">{{ Session::get('message')}}</h3>
+                              @endif
 
                     <div class="card-body">
-                      <form class="" action="{{ route('update-password')}}" method="post">
-                          @csrf
+                          <form class="" action="{{ route('update-password')}}" method="post">
+                              @csrf
 
                           <div class="form-group ">
-                          <label for="" class="">Old Password</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text fa fa-lock" id="inputGroupPrepend2"></span>
-                            </div>
-                          <input type="password"  class="form-control " name="old_password"  value="" required>
-                          <span class="text-danger">{{ $errors->first('old_password')}}</span>
-                         </div>
+                                  <label for="" class="">Old Password</label>
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text fa fa-lock" id="inputGroupPrepend2"></span>
+                                    </div>
+                                  <input type="password"  class="form-control " name="old_password"  value="" >
+                                </div>
+                                <span class="text-danger">{{ $errors->first('old_password')}}</span>
+
                         </div>
 
-                        <div class="form-group ">
-                        <label for="" class="">New Password</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text fa fa-lock" id="inputGroupPrepend2"></span>
-                          </div>
-                        <input type="password"  class="form-control " name="new_password"  value="" required>
-                        <span class="text-danger">{{ $errors->first('new_password')}}</span>
-                       </div>
+                      <div class="form-group ">
+                                  <label for="" class="">New Password</label>
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text fa fa-lock" id="inputGroupPrepend2"></span>
+                                    </div>
+                                  <input type="password"  class="form-control " name="password"  value="" >
+                                </div>
+                                <span class="text-danger">{{ $errors->first('password')}}</span>
+
                      </div>
 
                       <div class="form-group ">
-                        <label for="" class="">Confirm Password</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text fa fa-lock" id="inputGroupPrepend2"></span>
-                          </div>
-                        <input type="password"  class="form-control " name="confirm_passord"  value="" required>
-                        <span class="text-danger">{{ $errors->first('confirm_password')}}</span>
-                      </div>
+                                    <label for="" class="">Confirm Password</label>
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text fa fa-lock" id="inputGroupPrepend2"></span>
+                                      </div>
+                                    <input type="password"  class="form-control " name="password_confirmation"  value="">
+                                    <span class="text-danger">{{ $errors->first('password_confirmation')}}</span>
+                                  </div>
+                                  <span class="text-danger">{{ $errors->first('password_confirmation')}}</span>
+
                       </div>
 
 
                           <div class="form-group ">
-                          <label for="" class=""></label>
-                          <input type="submit" class="form-control  btn btn-danger" name="btn" value="Save">
+                                  <label for="" class=""></label>
+                                  <input type="submit" class="form-control  btn btn-danger" name="btn" value="Save">
                         </div>
                       </form>
                     </div>

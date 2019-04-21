@@ -9,6 +9,7 @@ use App\Model\User;
 use App\Model\Profile;
 use Image;
 use File;
+use Brian2694\Toastr\Toastr;
 
 class ProfileController extends Controller
 {
@@ -102,7 +103,7 @@ class ProfileController extends Controller
 
               $profile->save();
 
-                session()->flash('message','Profile Update Successfully ');
+           \toastr()->success('Your profile update successfully','success');
                 return redirect()->route('profile');
             }
 

@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -44,6 +44,10 @@ class User extends Authenticatable
       }
       public function rating(){
           return $this->hasOne(Rating::class,'user_id','id');
+      }
+
+      public function subscribe(){
+                  return $this->hasOne(Subscriber::class);
       }
 
     /**

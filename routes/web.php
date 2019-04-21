@@ -13,7 +13,7 @@
 
 // Route::get('/', 'HomeController@index');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 
 
@@ -69,27 +69,27 @@ Route::group(['prefix'=>'admin','namespace'=>'admin','middleware'=>['auth','admi
 Route::group(['prefix'=>'instructor','namespace'=>'Instructor','middleware'=>['auth','instructor']],function(){
 
           Route::get('dashboard','DashboardController@index')->name('dashboard');
-          Route::get('course','CourseController@index')->name('manage-course');
-          Route::get('course/create','CourseController@create')->name('create-course');
-          Route::post('course/store','CourseController@store')->name('store-course');
-          Route::get('course/show/{id}','CourseController@show')->name('show-course');
-          Route::get('course/edit/{id}','CourseController@edit')->name('edit-course');
-          Route::post('course/update','CourseController@update')->name('update-course');
-          Route::get('course/destroy/{id}','CourseController@destroy')->name('destroy-course');
-          Route::get('section','SectionController@index')->name('manage-section');
-          Route::get('section/create','SectionController@create')->name('create-section');
-          Route::post('section/store','SectionController@store')->name('store-section');
-          Route::get('section/show/{id}','SectionController@show')->name('show-section');
-          Route::get('section/edit/{id}','SectionController@edit')->name('edit-section');
-          Route::post('section/update','SectionController@update')->name('update-section');
-          Route::get('section/destroy/{id}','SectionController@destroy')->name('destroy-section');
-          Route::get('lession','LessionController@index')->name('manage-lession');
-          Route::get('lession/create','LessionController@create')->name('create-lession');
-          Route::post('lession/store','LessionController@store')->name('store-lession');
-          Route::get('lession/show/{id}','LessionController@show')->name('show-lession');
-          Route::get('lession/edit/{id}','LessionController@edit')->name('edit-lession');
-          Route::post('lession/update','LessionController@update')->name('update-lession');
-          Route::get('lession/destroy/{id}','LessionController@destroy')->name('destroy-lession');
+          Route::get('course','CourseController@index')->name('instructor-manage-course');
+          Route::get('course/create','CourseController@create')->name('instructor-create-course');
+          Route::post('course/store','CourseController@store')->name('instructor-store-course');
+          Route::get('course/show/{id}','CourseController@show')->name('instructor-show-course');
+          Route::get('course/edit/{id}','CourseController@edit')->name('instructor-edit-course');
+          Route::post('course/update','CourseController@update')->name('instructor-update-course');
+          Route::get('course/destroy/{id}','CourseController@destroy')->name('instructor-destroy-course');
+          Route::get('section','SectionController@index')->name('instructor-manage-section');
+          Route::get('section/create','SectionController@create')->name('instructor-create-section');
+          Route::post('section/store','SectionController@store')->name('instructor-store-section');
+          Route::get('section/show/{id}','SectionController@show')->name('instructor-show-section');
+          Route::get('section/edit/{id}','SectionController@edit')->name('instructor-edit-section');
+          Route::post('section/update','SectionController@update')->name('instructor-update-section');
+          Route::get('section/destroy/{id}','SectionController@destroy')->name('instructor-destroy-section');
+          Route::get('lession','LessionController@index')->name('instructor-manage-lession');
+          Route::get('lession/create','LessionController@create')->name('instructor-create-lession');
+          Route::post('lession/store','LessionController@store')->name('instructor-store-lession');
+          Route::get('lession/show/{id}','LessionController@show')->name('instructor-show-lession');
+          Route::get('lession/edit/{id}','LessionController@edit')->name('instructor-edit-lession');
+          Route::post('lession/update','LessionController@update')->name('instructor-update-lession');
+          Route::get('lession/destroy/{id}','LessionController@destroy')->name('instructor-destroy-lession');
           Route::get('logout','HomeController@logout')->name('admin-logout');
 
 });
@@ -121,6 +121,7 @@ Route::group(['prefix'=>'instructor','namespace'=>'Instructor','middleware'=>['a
           Route::post('reply/store','ReplyController@replystore')->name('reply');
           Route::get('like/{id}','LikeController@like')->name('like');
           Route::get('dislike/{id}','LikeController@dislike')->name('dislike');
+          Route::post('subscribe','SubscribeController@store')->name('subscribe-store');
 
 
 });

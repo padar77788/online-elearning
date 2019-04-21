@@ -5,10 +5,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LessonRequest;
+use App\Notifications\LessonNotification;
+use Illuminate\Support\Facades\Notification;
 use App\Model\User;
 use App\Model\Course;
 use App\Model\Section;
 use App\Model\Lession;
+use App\Model\Subscribe;
 
 class LessionController extends Controller
 {
@@ -40,17 +43,31 @@ class LessionController extends Controller
 
     public function store(LessonRequest $request)
     {
-
-                    $inputData=$request->only('title','course_id','section_id','discription','video_url','sourcecode_url');
-                    $inputData['user_id']=Auth::id();
-                    Lession::create($inputData);
+                    $subscriber=subscribe::all();
+                    $lesson=new Lession();
+                    $inputData=$request->all();
+                    $lesson->title=$request->title;
+                    $lesson->course_id=$request->course_id;
+                    $lesson->section_id=$request->section_id;
+                    $lesson->discription=$request->discription;
+                    $lesson->video_url=$request->video_url;
+                    $lesson->sourcecode_url=$request->sourcecode_url;
+                    $lesson->user_id=Auth::id();
+                    $lesson->save();
+                  foreach($subscriber as $subscribe){
+                    Notification::route('mail',$subscribe->email)
+                    ->notify(new LessonNotification($lesson));
+                  }
                     session()->flash('message','New lession Added Successfully ');
                     return redirect()->back();
+
     }
 
 
     public function show($id)
     {
+
+
 
     }
 

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/fonts/ionicons/css/ionicons.min.css') }} ">
     <link rel="stylesheet" href="{{ asset('frontend/fonts/fontawesome/css/font-awesome.min.css') }} ">
     <link rel="stylesheet" href="{{ asset('frontend/fonts/flaticon/font/flaticon.css') }} ">
-
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/mystyle.css') }}">
@@ -154,25 +154,6 @@
    @yield('content')
 
 
-    <!-- <section class="overflow">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-
-
-          <div class="col-lg-7 order-lg-3 order-1 mb-lg-0 mb-5">
-            <img src="{{ asset('frontend/images/person_testimonial_1.jpg') }} " alt="Image placeholder" class="img-md-fluid">
-          </div>
-          <div class="col-lg-1 order-lg-2"></div>
-          <div class="col-lg-4 order-lg-1 order-2 mb-lg-0 mb-5">
-            <blockquote class="testimonial">
-              &ldquo Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt nihil ab cumque molestiae commodi. &rdquo
-            </blockquote>
-            <p>&mdash John Doe, Certified ReactJS Student</p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- END section -->
 
 
 <div class="container-fluid  datempete-footer">
@@ -244,7 +225,8 @@
 
     <script src="{{ asset('frontend/js/main.js') }}"></script>
     <script src="{{ asset('frontend/js/myjs.js') }}"></script>
-
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
     @yield('js')
   </body>
 </html>

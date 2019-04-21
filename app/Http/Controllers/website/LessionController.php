@@ -13,6 +13,8 @@ use App\Model\Comment;
 use App\Model\Reply;
 use App\Model\like;
 use App\Model\Dislike;
+use App\Model\Subscribe;
+use App\Model\User;
 class LessionController extends Controller
 {
       public function index(){
@@ -27,7 +29,11 @@ class LessionController extends Controller
                           $allLession=Lession::all();
                           $likes=like::where('lession_id',$id);
                           $dislikes=Dislike::where('lession_id',$id);
+                          $subscribers=Subscribe::all();
                           $lessonkey='lessionkey'.$singleLession->id;
+                          $previous=Lession::where('id','<',$singleLession->id)->max('id');
+                          $next=Lession::where('id','>',$singleLession->id)->min('id');
+                          $user=User::find(Auth::user());
                           if (!session()->has($lessonkey)) {
                                $singleLession->increment('view_count');
                                session()->put($lessonkey,1);
@@ -42,6 +48,9 @@ class LessionController extends Controller
                             'replies'=>$replies,
                             'likes'=>$likes,
                             'dislikes'=>$dislikes,
+                            'subscribers'=>$subscribers,
+                            'previous'=>$previous,
+                            'next'=>$next
                        ]);
 
               }

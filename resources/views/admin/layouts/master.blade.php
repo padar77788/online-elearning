@@ -19,6 +19,7 @@
 <!-- Custom fonts for this template-->
   <!-- Custom styles for this template-->
   <link href="{{ asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
   @yield('css')
 </head>
 
@@ -387,12 +388,23 @@
         });
     </script>
     <script>
-          CKEDITOR.replace( 'discription' );
+
+          var url='{{ url('') }}';
+          var options = {
+            filebrowserImageBrowseUrl: url+'/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: url+'/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: url+'/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: url+'/laravel-filemanager/upload?type=Files&_token='
+          };
+          
+          CKEDITOR.replace( 'discription',options );
+
       </script>
 
 
 <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+       {!! Toastr::message() !!}
 </body>
 
 </html>

@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                   <label for="">Discription</label>
-                    <textarea name="discription"></textarea>
+                    <textarea name="discription" id='my-editor'></textarea>
                     <span class="text-danger">{{ $errors->first('discription')}}</span>
 
                 </div>
